@@ -12,3 +12,10 @@ for (var i = 0; i < cartProducts.length; i++) {
     const productQuantity = cartProducts[i].getElementsByClassName("procuct_qtd")[0].value
     console.log(productQuantity)
 }
+
+
+// cadastro usuário
+let nome = prompt("Qual o seu nome?")
+let mesa = prompt("E qual o número de sua mesa?")
+sessionStorage.setItem("cliente", nome)
+sessionStorage.setItem("mesa", mesa)
