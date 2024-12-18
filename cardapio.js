@@ -7,9 +7,9 @@ if (document.readyState === "loading") {
 var totalAmount = "0,00"
 
 function ready() {
-    const removeProduto = document.getElementsByClassName("btn_remove")
-    for (var i = 0; i < removeProduto.length; i++) {
-        removeProduto[i].addEventListener("click", removeProduct)
+    const removeProduct = document.getElementsByClassName("btn_remove")
+    for (var i = 0; i < removeProduct.length; i++) {
+        removeProduct[i].addEventListener("click", removeProduct)
     }
 
     const quantityInputs = document.getElementsByClassName("product-qtd-input")
@@ -17,12 +17,12 @@ function ready() {
         quantityInputs[i].addEventListener("change", updateTotal)
     }
 
-    const addToCartButtons = document.getElementsByClassName("button-hover-background")
+    const addToCartButtons = document.getElementsByClassName("btn_carrinho")
     for (var i = 0; i < addToCartButtons.length; i++) {
         addToCartButtons[i].addEventListener("click", addProductToCart)
     }
 
-    const purchaseButton = document.getElementsByClassName("purchase-button")
+    const purchaseButton = document.getElementsByClassName("btn_finalizar")
     purchaseButton.addEventListener("click", makePurchase)
 }
 
@@ -52,11 +52,11 @@ function checkIfInputIsNull(event) {
 function addProductToCart(event) {
     const button = event.target
     const productInfos = button.parentElement.parentElement
-    const productImage = productInfos.getElementsByClassName("product-image")[0].src
-    const productTitle = productInfos.getElementsByClassName("product-title")[0].innerText
-    const productPrice = productInfos.getElementsByClassName("product-price")[0].innerText
+    const productImage = productInfos.getElementsByClassName("card_image")[0].src
+    const productTitle = productInfos.getElementsByClassName("card_title")[0].innerText
+    const productPrice = productInfos.getElementsByClassName("card_preco")[0].innerText
 
-    const productCartName = document.getElementsByClassName("cart-product-title")
+    const productCartName = document.getElementsByClassName("card_title")
     for (var i = 0; i < productCartName.length; i++) {
         if (productCartName[i].innerText === productTitle) {
             productCartName[i].parentElement.parentElement.getElementsByClassName("product-qtd-input")[0].value++
@@ -69,23 +69,25 @@ function addProductToCart(event) {
 
     newCartProduct.innerHTML = 
     `
+    <tr class="cart-product">
     <td class="product_identification">
                             <img  src="${productImage} alt="${productTitle}">
                             <strong class="product_title">${productTitle}</strong>
                         </td>
                         <td>
-                            <span class="procuct_price">${productPrice}</span>
+                            <span class="product_price">${productPrice}</span>
                         </td>
                         <td>
-                            <input class="procuct_qtd" type="number" value="1" min="0">
+                            <input class="product_qtd" type="number" value="1" min="0" class="product-qtd-input">
                             <button class="btn_remove">Remover</button>
                         </td>
+                        </tr>
     `
     const tableBody = document.querySelector(".cart-table tbody")
     tableBody.append(newCartProduct)
     updateTotal()
     newCartProduct.getElementsByClassName("product-qtd-input")[0].addEventListener("change", checkIfInputIsNull)
-    newCartProduct.getElementsByClassName("remove-product-button")[0].addEventListener("click", removeProduct)
+    newCartProduct.getElementsByClassName("btn_remove")[0].addEventListener("click", removeProduct)
 }
 
 function removeProduct(event) {
@@ -94,11 +96,11 @@ function removeProduct(event) {
 }
 function updateTotal() {
     let totalAmount = 0
-    const cartProducts = document.getElementsByClassName("cart_product")
+    const cartProducts = document.getElementsByClassName("cart-product")
     for (var i = 0; i < cartProducts.length; i++) {
         // console.log(cartProducts[i])
-        const productPrice = cartProducts[i].getElementsByClassName("procuct_price")[0].innerText.replace("R$", "").replace(",", ".")
-        const productQuantity = cartProducts[i].getElementsByClassName("procuct_qtd")[0].value
+        const productPrice = cartProducts[i].getElementsByClassName("card_preco")[0].innerText.replace("R$", "").replace(",", ".")
+        const productQuantity = cartProducts[i].getElementsByClassName("product_qtd")[0].value
         console.log(productQuantity)
 
         totalAmount += productPrice * productQuantity;
