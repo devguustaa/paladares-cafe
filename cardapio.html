@@ -1,9 +1,10 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/icons/mug-hot-solid.svg" type="image/x-icon" class="favicon">
+    <script async src="cardapio.js"></script>
     <title>Paladares Café</title>
     <link rel="stylesheet" href="styles/cardapio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
@@ -37,42 +38,42 @@
                     <img class="card_image" src="./img/cardapio/panna.webp" alt="imagem de um café panna">
                     <h2 class="card_title">Panna</h2>
                     <span class="card_preco">R$ 15,90</span>
-                    <button type="button" class="btn_carrinho"><i class="fa-solid fa-cart-plus cart_icon"></i></button>
+                    <button class="btn_carrinho">Adicionar ao carrinho</button>
                 </div>
 
                 <div class="card_produto">
                     <img class="card_image" src="./img/cardapio/cappuccino-especial.webp" alt="imagem de um cappuccino especial">
                     <h2 class="card_title">Cappuccino Especial</h2>
                     <span class="card_preco">R$ 19,90</span>
-                    <button type="button" class="btn_carrinho"><i class="fa-solid fa-cart-plus  cart_icon"></i></button>
+                    <button class="btn_carrinho">Adicionar ao carrinho</button>
                 </div>                
                 
                 <div class="card_produto">
                     <img class="card_image" src="./img/cardapio/cappuccino-italiano.webp" alt="imagem de um cappuccino italiano">
                     <h2 class="card_title">Cappuccino Italiano</h2>
                     <span class="card_preco">R$ 24,90</span>
-                    <button type="button" class="btn_carrinho"><i class="fa-solid fa-cart-plus  cart_icon"></i></button>
+                    <button class="btn_carrinho">Adicionar ao carrinho</button>
                 </div>                
                 
                 <div class="card_produto">
                     <img class="card_image" src="./img/cardapio/cappuccino-sucre.webp" alt="imagem de um cappuccino sucre">
                     <h2 class="card_title">Cappuccino Sucrê</h2>
                     <span class="card_preco">R$ 29,90</span>
-                    <button type="button" class="btn_carrinho"><i class="fa-solid fa-cart-plus  cart_icon"></i></button>
+                    <button class="btn_carrinho">Adicionar ao carrinho</button>
                 </div>                
                 
                 <div class="card_produto">
                     <img class="card_image" src="./img/cardapio/machiatto.webp" alt="imagem de um machiatto">
                     <h2 class="card_title">Macchiato</h2>
                     <span class="card_preco">R$ 34,90</span>
-                    <button type="button" class="btn_carrinho"><i class="fa-solid fa-cart-plus cart_icon"></i></button>
+                    <button class="btn_carrinho">Adicionar ao carrinho</button>
                 </div>                
                 
                 <div class="card_produto">
                     <img class="card_image" src="./img/cardapio/moccha.webp" alt="imagem de um moccha">
                     <h2 class="card_title">Moccha</h2>
                     <span class="card_preco">R$ 23,90</span>
-                    <button type="button" class="btn_carrinho"><i class="fa-solid fa-cart-plus cart_icon"></i></button>
+                    <button class="btn_carrinho">Adicionar ao carrinho</button>
                 </div>
             </div>
         </section>  
@@ -89,45 +90,19 @@
                 </thead>
 
                 <tbody>
-                    <!-- <tr class="cart_product">
-                        <td class="product_identification">
-                            <img class="procuct_image" src="img/cardapio/panna.webp" alt="">
-                            <strong class="product_title">Panna</strong>
-                        </td>
-                        <td>
-                            <span class="product_price">R$ 15,90</span>
-                        </td>
-                        <td>
-                            <input type="number" value="2" min="0" class="product-qtd-input" >
-                            <button class="btn_remove">Remover</button>
-                        </td>
-                    </tr>
-                    <tr class="cart_product">
-                        <td class="product_identification">
-                            <img class="product_image" src="img/cardapio/panna.webp" alt="">
-                            <strong class="product_title">Panna</strong>
-                        </td>
-                        <td>
-                            <span class="product_price">R$ 15,90</span>
-                        </td>
-                        <td>
-                            <input class="product_qtd" type="number" value="1" min="0" class="product-qtd-input>
-                            <button class="btn_remove">Remover</button>
-                        </td>
-                    </tr> -->
                 </tbody>
 
                 <tfoot>
                     <tr>
                         <td colspan="3" class="total_container">
                             <strong>Total:</strong>
-                            <span>R$ 0,00</span>
+                            <span>R$0,00</span>
                         </td>
                     </tr>
                 </tfoot>
             </table>
 
-            <button type="button" class="btn_finalizar">finalizar compra</button>
+            <button class="btn_finalizar">finalizar compra</button>
         </section>
 
     <footer id="footer">
@@ -136,5 +111,4 @@
 
 </main>
 
-<script src="cardapio.js"></script>
 </body>
