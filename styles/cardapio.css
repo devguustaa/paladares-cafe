@@ -53,11 +53,9 @@ h1 {
     border-radius: 50%;
 }
 
-h2 {
-    font-family: "Barlow", sans-serif;
+.card_title {
     font-size: 26px;
     font-weight: 400;
-    font-style: normal;
     padding-top: 10px;
     text-align: center;
 }
@@ -74,10 +72,13 @@ h2 {
 }
 
 .btn_carrinho {
-    background: none;
+    font-size: 20px;
     padding: 10px;
     cursor: pointer;
     border: none;
+    border-radius: 10px;
+    background-color: #ef9e64;
+    color: #000;
 }
 
 h3 {
@@ -112,7 +113,7 @@ h3 {
     width: 26%;
 }
 
-.cart_product td {
+.cart_product tr {
     padding: 8px 0;
 }
 
@@ -121,7 +122,7 @@ h3 {
     align-items: center;
 }
 
-.procuct_image {
+.product_image {
     width: 100px;
     height: auto;
 }
@@ -131,7 +132,7 @@ h3 {
     font-size: 18px;
 }
 
-.procuct_qtd {
+.product_qtd {
     width: 48px;
     height: 36px;
     border-radius: 6px;
@@ -214,18 +215,18 @@ h3 {
     .table_head_item {
         font-size: 20px;
     }
-    .procuct_image {
+    .product_image {
         width: 150px;
         height: auto;
     }
     .product_title {
         font-size: 22px;
     }
-    .procuct_price {
+    .product_price {
         font-size: 23px;
         font-weight: 400;
     }
-    .procuct_qtd {
+    .product_qtd {
         width: 40px;
         height: 50px;
         font-size: 28px;
